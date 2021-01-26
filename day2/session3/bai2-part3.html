@@ -1,0 +1,52 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>CSS Login Form</title>
+    <style type="text/css">
+        .loginform {
+            color: white;
+            border: 1px solid #bc603c;
+            background-color: #ffa20c;
+        }
+        .email label {
+            margin: 20px 25px 20px 27px;
+        }
+        #email {
+            margin: 20px 0px 10px 10px;
+            background-color: #fee3ad;
+        }
+        .pass label {
+            margin: 10px 20px 10px 10px;
+        }
+        #password {
+            margin: 10px 20px 10px 15px;
+            background-color: #fee3ad;
+        }
+        .button {
+            border-style: outset;
+            background-color: #ffa20c;
+            margin: 10px 110px;
+        }
+    </style>
+</head>
+<body>
+    <form action="#">
+        <fieldset>
+            <legend class="loginform">Login Form</legend>
+            <div class="email">
+                <label for="email">E-mail</label>
+                <input type="text" id="email" required>
+            </div>
+            <div class="pass">
+                <label for="password">Password</label>
+                <input type="password" id="password" required>
+            </div>
+            <input type="submit" value="Login" class="button">
+        </fieldset>
+    </form>
+</body>
+</html>
