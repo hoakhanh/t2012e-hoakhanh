@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+}
+
+.form-group {
+    margin: 10px;
+}
+
+.form-group label:first-child {
+    width: 170px;
+    float: left;
+}
+
+fieldset {
+    width: 570px;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+input {
+    border-radius: 5px;
+    height: 20px;
+}
+
+textarea {
+    border-radius: 5px;
+    height: 70px;
+    width: 300px;
+}
+
+.normal-input {
+    width: 200px;
+}
+
+.short-input {
+    width: 100px;
+}
+
+.long-input {
+    width: 300px;
+}
+.username-warning, .password-warning {
+    color: red;
+    margin-left: 170px;
+}

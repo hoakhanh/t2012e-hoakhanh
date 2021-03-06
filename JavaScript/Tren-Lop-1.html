@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8">
+<style>
+    input[type=text], select {
+        width: 100%;
+        padding: 12px 20px;
+        margin: 8px 0;
+        display: inline-block;
+        border: 1px solid #ccc;
+        border-radius: 4px;
+        box-sizing: border-box;
+    }
+
+    input[type=button] {
+        width: 100%;
+        background-color: #4CAF50;
+        color: white;
+        padding: 14px 20px;
+        margin: 8px 0;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+
+    input[type=button]:hover {
+        background-color: #45a049;
+    }
+
+    div {
+        border-radius: 5px;
+        background-color: #f2f2f2;
+        padding: 20px;
+    }
+</style>
+<body>
+
+<h3>List Student</h3>
+<ul id="list-student">
+    <li>Kim Thoa</li>
+</ul>
+
+<h3><span>Register form</span></h3>
+
+<div>
+    <form  name="register-form">
+        <label>First Name</label>
+        <input type="text" class="form-control" id="firstname" name="firstname" placeholder="Your name..">
+
+        <label>Last Name</label>
+        <input type="text" class="form-control" id="lastname" name="lastname" placeholder="Your last name..">
+
+        <label>Country</label>
+        <select name="country">
+            <option value="australia">Australia</option>
+            <option value="canada">Canada</option>
+            <option value="usa">USA</option>
+        </select>
+        <input type="button" value="Submit" name="btn-submit" onclick="addName()">
+    </form>
+</div>
+<script>
+    function addName() {
+        var name = document.querySelector('#list-student');
+        var txtFirstName = document.getElementById("firstname").value;
+        var txtLastName = document.getElementById('lastname').value;
+        if (txtFirstName && txtLastName) {
+            name.innerHTML  += `<li>${txtFirstName} ${txtLastName}</li>`;
+        }
+    }
+
+</script>
+</body>
+</html>
