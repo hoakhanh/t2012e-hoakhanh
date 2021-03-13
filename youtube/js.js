@@ -10,19 +10,19 @@ btnSearch.onclick = function () {
             console.log(jsObject.items);
             let listYoutubeVideo = jsObject.items;
             let htmlResult = "";
+            // var videoId = listYoutubeVideo[i].id.videoId;
             for (let i = 0; i < listYoutubeVideo.length; i++) {
-                htmlResult += `<div class="youtube-item">
+                htmlResult += `<div class="youtube-item">                       
                         <div class="thumbnail">
-<!--                            <iframe src="https://www.youtube.com/embed/${listYoutubeVideo[i].id.videoId}" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>-->
-                            <img src="${listYoutubeVideo[i].snippet.thumbnails.high.url}" alt="">
-                        </div>
-                         <div class="title">${listYoutubeVideo[i].snippet.title}</div>
+                            <img src="${listYoutubeVideo[i].snippet.thumbnails.high.url}" onclick="showVideo('${listYoutubeVideo[i].id.videoId}')">
+                        </div>  
+                        <div class="title">${listYoutubeVideo[i].snippet.title}</div>                     
                     </div>`;
             }
             divResult.innerHTML = htmlResult;
         }
     }
-    xhr.open("GET", `https://content.googleapis.com/youtube/v3/search?q=${keyword}&type=video&maxResults=9&part=snippet&key=AIzaSyDcwdSvwT9kMqmq8KejRWzfra_B7Jc0rAg`)
+    xhr.open("GET", `https://content.googleapis.com/youtube/v3/search?q=${keyword}&type=video&maxResults=9&part=snippet&key=AIzaSyC__kw4rrUc5tkntrhThEGTR5WSxCYcEB4`)
     // dữ liệu thực sự được gửi đi.
     xhr.send();
 }
@@ -33,3 +33,15 @@ input.addEventListener("keyup", function(event) {
         document.getElementById("search").click();
     }
 });
+var modal = document.getElementById("myModal");
+let videoFrame = document.getElementById("video-frame");
+function showVideo(videoId) {
+    modal.style.display = "block";
+    videoFrame.src = "https://www.youtube.com/embed/" + videoId;
+}
+
+let span = document.getElementsByClassName("close")[0];
+span.onclick = function() {
+    modal.style.display = 'none';
+    videoFrame.src = "";
+}
