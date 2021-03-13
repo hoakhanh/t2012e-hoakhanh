@@ -10,7 +10,6 @@ btnSearch.onclick = function () {
             console.log(jsObject.items);
             let listYoutubeVideo = jsObject.items;
             let htmlResult = "";
-            // var videoId = listYoutubeVideo[i].id.videoId;
             for (let i = 0; i < listYoutubeVideo.length; i++) {
                 htmlResult += `<div class="youtube-item">                       
                         <div class="thumbnail">
