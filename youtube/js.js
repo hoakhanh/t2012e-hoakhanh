@@ -22,7 +22,7 @@ btnSearch.onclick = function () {
     }
 
     if (keyword) {
-        xhr.open("GET", `https://content.googleapis.com/youtube/v3/search?q=${keyword}&type=video&maxResults=9&part=snippet&key=AIzaSyC__kw4rrUc5tkntrhThEGTR5WSxCYcEB4`)
+        xhr.open("GET", `https://content.googleapis.com/youtube/v3/search?q=${keyword}&type=video&maxResults=9&part=snippet&key=AIzaSyDcwdSvwT9kMqmq8KejRWzfra_B7Jc0rAg`)
         xhr.send();
     }
 }

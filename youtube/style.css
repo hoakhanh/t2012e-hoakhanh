@@ -158,7 +158,7 @@ header .logo img {
 }
 @media (max-width: 991px) {
     header {
-        padding: 20px 50px;
+        padding: 20px 0px;
         flex-direction: column;
     }
     .navigation {
@@ -177,9 +177,21 @@ header .logo img {
         height: 80%;
     }
     .youtube-item {
-        width: 80%;
+        width: 50%;
     }
     #result {
+        margin: 20px 0;
         justify-content: center;
+    }
+}
+@media (max-width: 469px) {
+    .navigation {
+        margin: 0;
+    }
+    #result {
+        margin: 0;
+    }
+    .youtube-item {
+        width: 100%;
     }
 }
