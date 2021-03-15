@@ -194,4 +194,7 @@ header .logo img {
     .youtube-item {
         width: 100%;
     }
+    .modal-content {
+        height: 50%;
+    }
 }
