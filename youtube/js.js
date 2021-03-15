@@ -7,25 +7,26 @@ btnSearch.onclick = function () {
     xhr.onreadystatechange = function () {
         if (this.readyState === 4 && this.status === 200) {
             let jsObject = JSON.parse(this.responseText);
-            console.log(jsObject.items);
             let listYoutubeVideo = jsObject.items;
             let htmlResult = "";
             for (let i = 0; i < listYoutubeVideo.length; i++) {
                 htmlResult += `<div class="youtube-item">                       
-                        <div class="thumbnail">
-                            <img src="${listYoutubeVideo[i].snippet.thumbnails.high.url}" onclick="showVideo('${listYoutubeVideo[i].id.videoId}')">
-                        </div>  
-                        <div class="title">${listYoutubeVideo[i].snippet.title}</div>                     
-                    </div>`;
+                                    <div class="thumbnail">
+                                        <img src="${listYoutubeVideo[i].snippet.thumbnails.high.url}" onclick="showVideo('${listYoutubeVideo[i].id.videoId}')">
+                                    </div>  
+                                    <div class="title" onclick="showVideo('${listYoutubeVideo[i].id.videoId}')">${listYoutubeVideo[i].snippet.title}</div>                     
+                               </div>`;
             }
             divResult.innerHTML = htmlResult;
         }
     }
-    xhr.open("GET", `https://content.googleapis.com/youtube/v3/search?q=${keyword}&type=video&maxResults=9&part=snippet&key=AIzaSyC__kw4rrUc5tkntrhThEGTR5WSxCYcEB4`)
-    // dữ liệu thực sự được gửi đi.
-    xhr.send();
+
+    if (keyword) {
+        xhr.open("GET", `https://content.googleapis.com/youtube/v3/search?q=${keyword}&type=video&maxResults=9&part=snippet&key=AIzaSyC__kw4rrUc5tkntrhThEGTR5WSxCYcEB4`)
+        xhr.send();
+    }
 }
-let input = document.getElementById("keyword");
+let input = txtKeyword;
 input.addEventListener("keyup", function(event) {
     if (event.keyCode === 13) {
         event.preventDefault();
@@ -44,3 +45,6 @@ span.onclick = function() {
     modal.style.display = 'none';
     videoFrame.src = "";
 }
+
+// Scroll to load more
+

@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:300,400,800,600,700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -71,20 +71,20 @@ header .logo img {
     cursor: pointer;
 }
 #result {
-    margin: 20px 20px;
+    margin: 20px 65px;
     position: relative;
     display: flex;
     flex-wrap: wrap;
-    align-items: center;
-    justify-content: center;
+    align-items: flex-start;
+    justify-content: flex-start;
 }
 .youtube-item {
-    margin: 0;
-    width: 30%;
+    margin-bottom: 5px;
+    width: 33%;
     padding: 20px;
+
 }
 .youtube-item .title {
-    height: 36px;
     font-weight: 500;
     color: #fff;
     text-overflow: ellipsis;
@@ -93,6 +93,9 @@ header .logo img {
     -webkit-box-orient: vertical;
     -webkit-line-clamp: 2;
     cursor: pointer;
+}
+.youtube-item .title:hover {
+    color: #de0611;
 }
 .youtube-item .thumbnail img {
     /*object-fit: cover;*/
@@ -120,20 +123,16 @@ header .logo img {
     background-color: rgba(0,0,0,0.9);
     backdrop-filter: blur(2px);
 }
-
 .modal-content {
     -webkit-animation-name: zoom;
-    -webkit-animation-duration: 0.6s;
+    -webkit-animation-duration: 0.2s;
     animation-name: zoom;
-    animation-duration: 0.6s;
+    animation-duration: 0.2s;
     margin: auto;
     display: block;
     width: 700px;
     height: 415px;
-
 }
-
-
 @-webkit-keyframes zoom {
     from {-webkit-transform:scale(0)}
     to {-webkit-transform:scale(1)}
@@ -143,7 +142,6 @@ header .logo img {
     from {transform:scale(0)}
     to {transform:scale(1)}
 }
-
 .close {
     position: absolute;
     top: 15px;
@@ -153,9 +151,8 @@ header .logo img {
     font-weight: bold;
     transition: 0.3s;
 }
-
 .close:hover, .close:focus {
-    color: #bbb;
+    color: #fff;
     text-decoration: none;
     cursor: pointer;
 }
@@ -180,7 +177,9 @@ header .logo img {
         height: 80%;
     }
     .youtube-item {
-        width: 70%;
-        min-width: 300px;
+        width: 80%;
+    }
+    #result {
+        justify-content: center;
     }
 }
